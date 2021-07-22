@@ -44,6 +44,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - username
     - jhkennedy
     - asjohnston-asf
     - jlrine2
