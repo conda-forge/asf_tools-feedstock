@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.2.0" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 29c9740d3c6e4a671ed171aad16ee62147847b5bf606f3332e1eb93c3791597b
+  sha256: 71c5e66f113b5b1339b42ab3a4916eef5d5ac49ae6aa8238af794817878a694a
 
 build:
   noarch: python
@@ -15,6 +15,8 @@ build:
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
     - make_composite = asf_tools.composite:main
+    - water_map = asf_tools.water_map:main
+    - calculate_hand = asf_tools.hand.calculate:main
 
 requirements:
   host:
@@ -25,15 +27,32 @@ requirements:
     - wheel
   run:
     - python >=3.8
+    - astropy
+    - fiona
+    - gdal >=3.3
     - numpy
-    - gdal >=3.2.0
+    - pysheds
+    - rasterio
+    - scikit-fuzzy
+    - scikit-image
+    - shapely
 
 test:
   imports:
     - asf_tools
     - asf_tools.composite
+    - asf_tools.dem
+    - asf_tools.hand
+    - asf_tools.raster
+    - asf_tools.threshold
+    - asf_tools.tile
+    - asf_tools.util
+    - asf_tools.vector
+    - asf_tools.water_map
   commands:
     - make_composite --help
+    - water_map --help
+    - calculate_hand --help
 
 about:
   home: https://github.com/ASFHyP3/asf-tools
