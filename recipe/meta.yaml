@@ -41,6 +41,7 @@ test:
   imports:
     - asf_tools
     - asf_tools.composite
+    - asf_tools.dem
     - asf_tools.hand
     - asf_tools.raster
     - asf_tools.threshold
