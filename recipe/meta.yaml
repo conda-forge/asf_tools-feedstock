@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 71c5e66f113b5b1339b42ab3a4916eef5d5ac49ae6aa8238af794817878a694a
+  sha256: abba7ecd98aea8b651332949453610ec413b5b653e2c4b9e1ec629b4dda9fb7e
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - make_composite = asf_tools.composite:main
     - water_map = asf_tools.water_map:main
