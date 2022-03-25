@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.3.2" %}
+{% set version = "0.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5c89123c4a6cf65c383502a02856f71be8a09a4e8593e2a9ad0f26a28ea9661f
+  sha256: 86040e766aafb9247202ff34a3a79b91ffb73800213ffcf97a2b8af701f2f001
 
 build:
   noarch: python
@@ -31,7 +31,7 @@ requirements:
     - fiona
     - gdal >=3.3
     - numpy
-    - pysheds
+    - pysheds >=0.3
     - rasterio
     - scikit-fuzzy
     - scikit-image
