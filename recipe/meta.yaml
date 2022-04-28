@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.3.3" %}
+{% set version = "0.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 86040e766aafb9247202ff34a3a79b91ffb73800213ffcf97a2b8af701f2f001
+  sha256: 201be9856c6d0e03bfcc1a787fa23c3fbc8375decf4a0fa9c42578f2417c8a26
 
 build:
   noarch: python
@@ -17,6 +17,7 @@ build:
     - make_composite = asf_tools.composite:main
     - water_map = asf_tools.water_map:main
     - calculate_hand = asf_tools.hand.calculate:main
+    - flood_map = asf_tools.flood_map:main
 
 requirements:
   host:
@@ -36,6 +37,7 @@ requirements:
     - scikit-fuzzy
     - scikit-image
     - shapely
+    - scipy
 
 test:
   imports:
@@ -49,10 +51,12 @@ test:
     - asf_tools.util
     - asf_tools.vector
     - asf_tools.water_map
+    - asf_tools.flood_map
   commands:
     - make_composite --help
     - water_map --help
     - calculate_hand --help
+    - flood_map --help
 
 about:
   home: https://github.com/ASFHyP3/asf-tools
@@ -65,4 +69,4 @@ extra:
   recipe-maintainers:
     - jhkennedy
     - asjohnston-asf
-    - jlrine2
+    - jacquelynsmale
