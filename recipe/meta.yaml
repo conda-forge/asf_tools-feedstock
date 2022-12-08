@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.4.2" %}
+{% set version = "0.4.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1c2290d56a1319787ac3faa71ac28a971ea813cb4246cdcdc8f247e4963f09dd
+  sha256: 2515089f194ca72107a52dbf45785fbe6e63cf2d3e0859c553575eb80c832ad7
 
 
 build:
