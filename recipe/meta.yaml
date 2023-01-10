@@ -32,7 +32,7 @@ requirements:
     - astropy
     - fiona
     - gdal >=3.3
-    - numpy
+    - numpy <1.24.0
     - pysheds >=0.3
     - rasterio
     - scikit-fuzzy
