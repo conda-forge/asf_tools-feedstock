@@ -12,7 +12,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - make_composite = asf_tools.composite:main
@@ -24,7 +24,7 @@ requirements:
   host:
     - python >=3.8
     - pip
-    - build
+    - python-build
     - setuptools >=61
     - setuptools_scm >=6.2
   run:
