@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.4.5" %}
+{% set version = "0.4.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: ee995fbb0c2477998f842745cece9500498b9371ad22cd11136f74473e45fa6b
+  sha256: c316122bfb76f0d9becb4bf0399d02ddba341f10c2e65e2c62e71f9a159e5101
 
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - make_composite = asf_tools.composite:main
