@@ -1,11 +1,11 @@
-About asf_tools
-===============
+About asf_tools-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asf_tools-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ASFHyP3/asf-tools
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/asf_tools-feedstock/blob/main/LICENSE.txt)
 
 Summary: Tools developed by ASF for working with SAR data
 
@@ -146,4 +146,5 @@ Feedstock Maintainers
 * [@asjohnston-asf](https://github.com/asjohnston-asf/)
 * [@jacquelynsmale](https://github.com/jacquelynsmale/)
 * [@jhkennedy](https://github.com/jhkennedy/)
+* [@jtherrmann](https://github.com/jtherrmann/)
 
