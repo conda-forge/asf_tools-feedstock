@@ -48,14 +48,14 @@ test:
     - asf_tools.aws
     - asf_tools.composite
     - asf_tools.dem
-    - asf_tools.hand
     - asf_tools.raster
-    - asf_tools.threshold
     - asf_tools.tile
     - asf_tools.util
     - asf_tools.vector
-    - asf_tools.water_map
-    - asf_tools.flood_map
+    - asf_tools.hydrosar.hand
+    - asf_tools.hydrosar.threshold
+    - asf_tools.hydrosar.water_map
+    - asf_tools.hydrosar.flood_map
   commands:
     - make_composite --help
     - water_map --help
