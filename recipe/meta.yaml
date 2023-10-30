@@ -1,5 +1,5 @@
 {% set name = "asf_tools" %}
-{% set version = "0.5.2" %}
+{% set version = "0.6.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 57340610344ae0f93f75edbf45d21999af7731176d820bea094d70e1ca365b18
+  sha256: cc37ceb16bc51aef83e9f911469facf5744c86d305cfdaf1392cd8eee5659098
 
 
 build:
@@ -16,9 +16,9 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - make_composite = asf_tools.composite:main
-    - water_map = asf_tools.water_map:main
-    - calculate_hand = asf_tools.hand.calculate:main
-    - flood_map = asf_tools.flood_map:main
+    - water_map = asf_tools.hydrosar.water_map:main
+    - calculate_hand = asf_tools.hydrosar.hand.calculate:main
+    - flood_map = asf_tools.hydrosar.flood_map:main
 
 requirements:
   host:
@@ -32,7 +32,7 @@ requirements:
     - astropy
     - boto3
     - fiona
-    - gdal >=3.3
+    - gdal >=3.7
     - numpy
     - pysheds >=0.3
     - rasterio
@@ -48,14 +48,14 @@ test:
     - asf_tools.aws
     - asf_tools.composite
     - asf_tools.dem
-    - asf_tools.hand
     - asf_tools.raster
-    - asf_tools.threshold
     - asf_tools.tile
     - asf_tools.util
     - asf_tools.vector
-    - asf_tools.water_map
-    - asf_tools.flood_map
+    - asf_tools.hydrosar.hand
+    - asf_tools.hydrosar.threshold
+    - asf_tools.hydrosar.water_map
+    - asf_tools.hydrosar.flood_map
   commands:
     - make_composite --help
     - water_map --help
