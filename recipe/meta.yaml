@@ -1,5 +1,6 @@
 {% set name = "asf_tools" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
+
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cc37ceb16bc51aef83e9f911469facf5744c86d305cfdaf1392cd8eee5659098
+  sha256: f21cb16d0a895ce3b357726373e74660bea5dd889f17965826f0366987a77e8f
 
 
 build:
@@ -19,6 +20,9 @@ build:
     - water_map = asf_tools.hydrosar.water_map:main
     - calculate_hand = asf_tools.hydrosar.hand.calculate:main
     - flood_map = asf_tools.hydrosar.flood_map:main
+    - generate_osm_dataset = asf_tools.watermasking.generate_osm_tiles:main
+    - generate_worldcover_dataset = asf_tools.watermasking.generate_worldcover_tiles:main
+    - fill_missing_tiles = asf_tools.watermasking.fill_missing_tiles:main
 
 requirements:
   host:
@@ -33,7 +37,10 @@ requirements:
     - boto3
     - fiona
     - gdal >=3.7
+    - geopandas
     - numpy
+    - osmium-tool
+    - pyogrio
     - pysheds >=0.3
     - rasterio
     - scikit-fuzzy
@@ -56,11 +63,17 @@ test:
     - asf_tools.hydrosar.threshold
     - asf_tools.hydrosar.water_map
     - asf_tools.hydrosar.flood_map
+    - asf_tools.watermasking.generate_osm_tiles
+    - asf_tools.watermasking.generate_worldcover_tiles
+    - asf_tools.watermasking.fill_missing_tiles
   commands:
     - make_composite --help
     - water_map --help
     - calculate_hand --help
     - flood_map --help
+    - generate_osm_dataset --help
+    - generate_worldcover_dataset --help
+    - fill_missing_tiles --help
 
 about:
   home: https://github.com/ASFHyP3/asf-tools
