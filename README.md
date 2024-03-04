@@ -149,5 +149,4 @@ Feedstock Maintainers
 * [@jacquelynsmale](https://github.com/jacquelynsmale/)
 * [@jhkennedy](https://github.com/jhkennedy/)
 * [@jtherrmann](https://github.com/jtherrmann/)
-* [@AndrewPlayer3](https://github.com/AndrewPlayer3/)
 
