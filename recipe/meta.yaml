@@ -26,13 +26,13 @@ build:
 
 requirements:
   host:
-    - python >=3.8
+    - python >=3.10
     - pip
     - python-build
     - setuptools >=61
     - setuptools_scm >=6.2
   run:
-    - python >=3.8
+    - python >=3.10
     - astropy
     - boto3
     - fiona
