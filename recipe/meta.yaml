@@ -13,7 +13,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - make_composite = asf_tools.composite:main
@@ -33,7 +33,7 @@ requirements:
     - setuptools_scm >=6.2
   run:
     - python >=3.10, <3.12
-    - astropy
+    - astropy-base
     - boto3
     - fiona
     - gdal >=3.7
