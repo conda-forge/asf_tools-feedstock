@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "asf_tools" %}
-{% set version = "0.8.2" %}
+{% set version = "0.8.3" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a35f0234c5a8297e2b01f85db48324ee50add280423bf33f9494c2213f5edf42
+  sha256: 0e2ad828f9f2c606027167a81cb19fd30e8ee536bfcd08f76ad08953cca5b25e
 
 
 build:
