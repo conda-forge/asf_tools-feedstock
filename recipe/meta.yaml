@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "asf_tools" %}
-{% set version = "0.8.3" %}
+{% set version = "0.8.4" %}
 
 
 package:
@@ -9,7 +9,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0e2ad828f9f2c606027167a81cb19fd30e8ee536bfcd08f76ad08953cca5b25e
+  sha256: edcee8b1dd7954e23b3a913bc8189ca4baefc5a9b044bbb24e6dd65fb2fbd5c4
 
 
 build:
@@ -35,7 +35,7 @@ requirements:
   run:
     - python >={{ python_min }},<3.12
     - astropy-base
-    - boto3
+    - boto3 >=1.36.0
     - fiona
     - gdal >=3.7
     - geopandas
